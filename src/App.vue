@@ -127,13 +127,13 @@ export default {
     }
   },
   mounted() {
-    http.get('/car-rental.json/342').then((response) => {
+    http.get('', { params: {slug: '/car-rental.json/342'} }).then((response) => {
       this.setParams(response.data);
       this.$nextTick(() => {this.$refs.map.init()});
     }).catch((e) => {
       // eslint-disable-next-line
       console.log(e);
-    })
+    });
   }
 }
 </script>
